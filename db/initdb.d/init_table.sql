@@ -9,6 +9,7 @@ create table if not exists calendar
     created_by  bigint                               not null comment '등록자',
     created_at  datetime   default CURRENT_TIMESTAMP not null comment '등록일',
     modified_at datetime   default CURRENT_TIMESTAMP not null comment '수정일'
+    deleted_at  datetime                             null comment '삭제일'
     );
 
 create table if not exists calendar_auth
