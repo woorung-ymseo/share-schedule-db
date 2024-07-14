@@ -133,11 +133,12 @@ create table if not exists user
 (
     id            bigint unsigned auto_increment
     primary key,
-    nickname      varchar(50) not null,
-    method        varchar(50) not null,
-    ci            varchar(50) not null,
-    image         varchar(50) null,
-    registered_at datetime    not null,
-    modified_at   datetime    null
+    recent_calendar_id bigint      null,
+    nickname           varchar(50) not null,
+    method             varchar(50) not null,
+    ci                 varchar(50) not null,
+    image              varchar(50) null,
+    registered_at      datetime    not null,
+    modified_at        datetime    null
     );
 
