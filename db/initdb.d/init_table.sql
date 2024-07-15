@@ -138,7 +138,7 @@ create table if not exists user
     nickname           varchar(50) not null comment '닉네임',
     method             varchar(50) not null comment '가입 방법',
     ci                 varchar(50) not null comment 'ci',
-    image              varchar(50) null comment '프로필 사진',
+    image              mediumblob  null comment '프로필 사진',
     registered_at      datetime    not null comment '가입일',
     modified_at        datetime    null comment '수정일'
     );
