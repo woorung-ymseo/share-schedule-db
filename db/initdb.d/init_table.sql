@@ -9,6 +9,7 @@ create table if not exists calendar
     created_by  bigint                               not null comment '등록자',
     created_at  datetime   default CURRENT_TIMESTAMP not null comment '등록일',
     modified_at datetime   default CURRENT_TIMESTAMP not null comment '수정일'
+    deleted_at  datetime                             null comment '삭제일'
     );
 
 create table if not exists calendar_auth
@@ -133,11 +134,12 @@ create table if not exists user
 (
     id            bigint unsigned auto_increment
     primary key,
-    nickname      varchar(50) not null,
-    method        varchar(50) not null,
-    ci            varchar(50) not null,
-    image         varchar(50) null,
-    registered_at datetime    not null,
-    modified_at   datetime    null
+    recent_calendar_id bigint      null comment '최근에 본 캘린더 id',
+    nickname           varchar(50) not null comment '닉네임',
+    method             varchar(50) not null comment '가입 방법',
+    ci                 varchar(50) not null comment 'ci',
+    image              mediumblob  null comment '프로필 사진',
+    registered_at      datetime    not null comment '가입일',
+    modified_at        datetime    null comment '수정일'
     );
 
